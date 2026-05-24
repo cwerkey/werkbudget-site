@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F4EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1D20" media="(prefers-color-scheme: dark)">
+  <title>werkBudget — Envelope budgeting that adapts to you</title>
+  <meta name="description" content="A local-first envelope budgeting app for iPhone. Real money in envelopes, categories that flex. Your data stays on your devices.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="canonical" href="https://werkbudget.werkey.tech/">
+  <meta property="og:title" content="werkBudget — Envelope budgeting that adapts to you">
+  <meta property="og:description" content="Real money in envelopes. Categories that flex. Local-first for iPhone.">
+  <meta property="og:url" content="https://werkbudget.werkey.tech/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <svg class="mark" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M14 57 V92 Q14 102 24 102 H96 Q106 102 106 92 V57" fill="none" stroke="currentColor" stroke-opacity="0.42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 38 L42 86 L60 54 L78 86 L98 38" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>werk<span class="B">B</span>udget</span>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="nav-cta" href="#testflight">Join TestFlight</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow" data-fade>Now in TestFlight</span>
+      <h1 data-fade data-fade-delay="1">Envelope budgeting<br>that <span class="accent">adapts</span> to you.</h1>
+      <p class="lede" data-fade data-fade-delay="2">
+        Real money lives in real envelopes. Categories classify spending — or hold the cash too — your call.
+        Local-first on your iPhone; nothing leaves your devices.
+      </p>
+      <div class="cta-row" data-fade data-fade-delay="3">
+        <a class="btn btn-primary" href="#testflight">
+          Join the TestFlight
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="about.html">Why we built it</a>
+      </div>
+
+      <div class="device-stage" data-fade data-fade-delay="3" aria-hidden="true">
+        <div class="device">
+          <div class="device-notch"></div>
+          <div class="device-screen">
+            <div class="screen-top">
+              <span>9:41</span>
+              <span class="status">
+                <svg viewBox="0 0 24 16" fill="currentColor"><path d="M1 14h2v-2H1zM5 14h2V9H5zM9 14h2V5H9zM13 14h2V1h-2z"/></svg>
+              </span>
+            </div>
+            <div class="app-greeting">
+              <h1>Hello.</h1>
+              <p>Let's manage your budget.</p>
+            </div>
+            <div class="app-month">
+              <div class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 4 8l6 5"/></svg></div>
+              <div class="label">May 2026</div>
+              <div class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l6 5-6 5"/></svg></div>
+            </div>
+            <div class="app-hero">
+              <div class="cap">UNALLOCATED</div>
+              <div class="big">$420</div>
+              <div class="split">
+                <div class="col"><span class="label">ALLOCATED</span><span class="val">$3,580</span></div>
+                <div class="rule"></div>
+                <div class="col"><span class="label">UNALLOC.</span><span class="val">$420</span></div>
+                <div class="rule"></div>
+                <div class="col"><span class="label">TOTAL</span><span class="val">$4,000</span></div>
+              </div>
+            </div>
+            <div class="app-section-head">
+              <h2>Envelopes</h2>
+              <span class="new">+ New</span>
+            </div>
+            <div class="app-grid">
+              <div class="app-card">
+                <div class="name">Bills</div>
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--accent)"     stroke-width="8" stroke-dasharray="184 264" stroke-dashoffset="0"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--spend)"      stroke-width="8" stroke-dasharray="40 264"  stroke-dashoffset="-184"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--wash)"       stroke-width="8" stroke-dasharray="22 264"  stroke-dashoffset="-224"/>
+                  </svg>
+                  <div class="ring-center">
+                    <span class="cap">AVAILABLE</span>
+                    <span class="amt">$245</span>
+                  </div>
+                </div>
+              </div>
+              <div class="app-card">
+                <div class="name">Lifestyle</div>
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--accent)"     stroke-width="8" stroke-dasharray="90 264"  stroke-dashoffset="0"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--spend)"      stroke-width="8" stroke-dasharray="70 264"  stroke-dashoffset="-90"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--wash)"       stroke-width="8" stroke-dasharray="56 264"  stroke-dashoffset="-160"/>
+                  </svg>
+                  <div class="ring-center">
+                    <span class="cap">AVAILABLE</span>
+                    <span class="amt">$186</span>
+                  </div>
+                </div>
+              </div>
+              <div class="app-card">
+                <div class="name">Goals</div>
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--accent)"     stroke-width="8" stroke-dasharray="220 264" stroke-dashoffset="0"/>
+                  </svg>
+                  <div class="ring-center">
+                    <span class="cap">SAVED</span>
+                    <span class="amt">$1,830</span>
+                  </div>
+                </div>
+              </div>
+              <div class="app-card">
+                <div class="name">Travel</div>
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--accent)"     stroke-width="8" stroke-dasharray="160 264" stroke-dashoffset="0"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--wash)"       stroke-width="8" stroke-dasharray="32 264"  stroke-dashoffset="-160"/>
+                  </svg>
+                  <div class="ring-center">
+                    <span class="cap">SAVED</span>
+                    <span class="amt">$640</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ENVELOPES SECTION -->
+  <section id="envelopes">
+    <div class="wrap">
+      <div class="section-head" data-fade>
+        <h2>Envelopes hold real money.</h2>
+        <p>Every dollar gets a job. Watch your envelopes fill as paychecks land, and feel it when you spend — because you actually moved something.</p>
+      </div>
+      <div class="envelopes">
+        <div class="envelope" data-fade>
+          <div class="name">Bills</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="9"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--accent)" stroke-width="9" stroke-dashoffset="0"   style="--seg: 184;"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--spend)"  stroke-width="9" stroke-dashoffset="-184" style="--seg: 40;"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--wash)"   stroke-width="9" stroke-dashoffset="-224" style="--seg: 22;"/>
+            </svg>
+            <div class="ring-center">
+              <span class="cap">AVAILABLE</span>
+              <span class="amt">$<span data-count="245">0</span></span>
+            </div>
+          </div>
+          <div class="legend">
+            <span class="item"><span class="dot" style="background: var(--accent);"></span>Allocated</span>
+            <span class="item"><span class="dot" style="background: var(--spend);"></span>Spent</span>
+            <span class="item"><span class="dot" style="background: var(--wash);"></span>Unalloc.</span>
+          </div>
+        </div>
+
+        <div class="envelope" data-fade data-fade-delay="1">
+          <div class="name">Lifestyle</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="9"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--accent)" stroke-width="9" stroke-dashoffset="0"   style="--seg: 90;"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--spend)"  stroke-width="9" stroke-dashoffset="-90"  style="--seg: 70;"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--wash)"   stroke-width="9" stroke-dashoffset="-160" style="--seg: 56;"/>
+            </svg>
+            <div class="ring-center">
+              <span class="cap">AVAILABLE</span>
+              <span class="amt">$<span data-count="186">0</span></span>
+            </div>
+          </div>
+          <div class="legend">
+            <span class="item"><span class="dot" style="background: var(--accent);"></span>Allocated</span>
+            <span class="item"><span class="dot" style="background: var(--spend);"></span>Spent</span>
+            <span class="item"><span class="dot" style="background: var(--wash);"></span>Unalloc.</span>
+          </div>
+        </div>
+
+        <div class="envelope" data-fade data-fade-delay="2">
+          <div class="name">Iceland 2027</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--track)" stroke-width="9"/>
+              <circle class="ring-seg" cx="50" cy="50" r="42" fill="none" stroke="var(--accent)" stroke-width="9" stroke-dashoffset="0" style="--seg: 220;"/>
+            </svg>
+            <div class="ring-center">
+              <span class="cap">SAVED</span>
+              <span class="amt">$<span data-count="2210">0</span></span>
+            </div>
+          </div>
+          <div class="legend">
+            <span class="item"><span class="dot" style="background: var(--accent);"></span>Goal: $2,400</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRUBBED FLOW SCENE -->
+  <section class="flow-scene" data-scrub data-paycheck-flow aria-label="How a paycheck routes into envelopes">
+    <div class="flow-sticky">
+      <div class="wrap" style="text-align:center;">
+        <div class="section-head">
+          <h2>One paycheck. Three rules. No spreadsheet.</h2>
+          <p>Routing rules decide what fills first. Goals get topped up, percentages take their slice, the remainder lands wherever you set as the catch-all.</p>
+        </div>
+        <div class="flow-canvas">
+          <div class="pay-card">
+            <div class="cap">PAYCHECK</div>
+            <div class="amt" data-pay-amt>+$3,200</div>
+          </div>
+          <svg class="flow-paths" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="100" d="M300 0 C 300 50, 100 30, 100 80" data-stream-path="0"/>
+            <path pathLength="100" d="M300 0 V 80" data-stream-path="1"/>
+            <path pathLength="100" d="M300 0 C 300 50, 500 30, 500 80" data-stream-path="2"/>
+          </svg>
+          <div class="targets">
+            <div class="target" data-target="0">
+              <div class="name">Rent</div>
+              <span class="rule">Goal: $1,800</span>
+              <div class="bar"><div class="bar-fill"></div></div>
+              <div class="filled-amt" data-fill-amt="0">$0</div>
+            </div>
+            <div class="target" data-target="1">
+              <div class="name">Iceland fund</div>
+              <span class="rule">10% rule</span>
+              <div class="bar"><div class="bar-fill"></div></div>
+              <div class="filled-amt" data-fill-amt="1">$0</div>
+            </div>
+            <div class="target" data-target="2">
+              <div class="name">Groceries</div>
+              <span class="rule">Remainder</span>
+              <div class="bar"><div class="bar-fill"></div></div>
+              <div class="filled-amt" data-fill-amt="2">$0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID: categories, credit cards, AI -->
+  <section>
+    <div class="wrap">
+      <div class="section-head" data-fade>
+        <h2>Discipline without rigidity.</h2>
+        <p>Envelopes give structure. Categories give flexibility. You pick how rigorous each one needs to be — and change your mind whenever.</p>
+      </div>
+      <div class="features">
+        <div class="feature" data-fade>
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          </div>
+          <h3>Two-mode categories</h3>
+          <p>Use them as plain classifiers, or opt one into <em>allocated mode</em> when you want it to hold cash. Switch any time — your history stays put.</p>
+        </div>
+        <div class="feature" data-fade data-fade-delay="1">
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 11h20"/></svg>
+          </div>
+          <h3>Credit cards</h3>
+          <p>When you charge something, the money moves from your spending envelope into a reserve for that card. When the statement arrives, the cash is already set aside. Tracks your statement cycle, not the calendar month.</p>
+        </div>
+        <div class="feature" data-fade data-fade-delay="2">
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>Goals with teeth</h3>
+          <p>Three kinds: hit a target, hold a threshold, or contribute every period. Goals attach to any category — including the flexible ones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY / ON-DEVICE -->
+  <section>
+    <div class="wrap">
+      <div class="privacy-callout" data-fade>
+        <div>
+          <h2>Your money. Your device. End of story.</h2>
+          <p>werkBudget is local-first. The only sync is your own iCloud private database — nobody else, including us, can see it.</p>
+          <ul>
+            <li>No analytics, no third-party SDKs, no tracking</li>
+            <li>No accounts to create; Sign in with Apple, optional Face ID lock</li>
+            <li>Your data lives in your iCloud private database — encrypted by Apple</li>
+            <li>Open-source privacy policy with public Git history</li>
+          </ul>
+        </div>
+        <div class="cloud-cross" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- phone -->
+            <rect x="60" y="40" width="80" height="130" rx="14" />
+            <line x1="60" y1="60" x2="140" y2="60" />
+            <!-- lock body -->
+            <rect x="86" y="108" width="28" height="22" rx="3" fill="currentColor" stroke="none" />
+            <!-- lock shackle -->
+            <path d="M92 108 V100 a8 8 0 0 1 16 0 V108" />
+          </svg>
+          <span class="badge">Local-first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="testflight" class="final-cta">
+    <div class="wrap-narrow">
+      <h2 data-fade>Take it for a spin.</h2>
+      <p data-fade data-fade-delay="1">werkBudget is in external TestFlight. Tap below to request access — you'll get an email from Apple with the invite link.</p>
+      <a class="btn btn-primary beat" data-fade data-fade-delay="2" href="mailto:werkbudget@werkey.tech?subject=TestFlight%20request">
+        Request TestFlight access
+      </a>
+      <p style="margin-top: 32px; font-size: 13px; color: var(--text-3);" data-fade data-fade-delay="3">
+        Or email <a href="mailto:werkbudget@werkey.tech" style="color: var(--accent); border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);">werkbudget@werkey.tech</a> directly.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div>© <span id="year">2026</span> werkBudget · made with care on a quiet street</div>
+      <div class="foot-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:werkbudget@werkey.tech">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="app.js?v=2" defer></script>
+</body>
+</html>

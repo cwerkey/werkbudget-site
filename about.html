@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F4EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1D20" media="(prefers-color-scheme: dark)">
+  <title>About — werkBudget</title>
+  <meta name="description" content="Why werkBudget exists: envelope discipline that doesn't punish you for being human.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="canonical" href="https://werkbudget.werkey.tech/about.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <svg class="mark" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M14 57 V92 Q14 102 24 102 H96 Q106 102 106 92 V57" fill="none" stroke="currentColor" stroke-opacity="0.42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 38 L42 86 L60 54 L78 86 L98 38" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>werk<span class="B">B</span>udget</span>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="nav-cta" href="/#testflight">Join TestFlight</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="long">
+    <div class="wrap-narrow">
+      <h1 data-fade>An honest envelope app.</h1>
+      <p class="meta" data-fade data-fade-delay="1">Why werkBudget exists, and what it tries to be.</p>
+
+      <p data-fade data-fade-delay="2">
+        Most budgeting apps are <em>spreadsheets in a wig</em>. They track. They categorize. They produce monthly pie charts that nobody acts on. The problem isn't the math — it's that the math doesn't feel like anything. You don't feel the trade-off when you swipe a card, so you don't make one.
+      </p>
+
+      <p data-fade>
+        Envelope budgeting fixes that. You decide, up front, what each dollar is for. When you spend, you literally move money out of an envelope. When an envelope is empty, you stop — or you raid another one and feel the choice. The discipline isn't rules; it's <em>physics</em>.
+      </p>
+
+      <h2 data-fade>Where the apps got it wrong</h2>
+      <p data-fade>
+        Classic envelope apps demand you allocate every dollar to a specific envelope before you can spend. That's elegant in theory and exhausting in practice. Real life has surprise mechanic bills and impulse coffees and that one wedding you forgot about. Force people to allocate every penny in advance, and they quit by week three.
+      </p>
+      <p data-fade>
+        So werkBudget bends the rule. Envelopes still hold the money. But <strong>categories</strong> — the things you classify spending into — can stay loose. Default mode: a category just labels a transaction so reports make sense. Opt-in mode: a category <em>also</em> holds allocated cash, like a sub-envelope, for the few you care to track tightly. You ratchet up discipline where it matters, and leave the rest fluid.
+      </p>
+
+      <h2 data-fade>What werkBudget is</h2>
+      <ul>
+        <li data-fade><strong>Envelope-first.</strong> Envelopes are the source of truth. Every transaction touches one.</li>
+        <li data-fade><strong>Flexible by default.</strong> Categories classify; allocate only the ones that earn it.</li>
+        <li data-fade><strong>Credit cards, honest.</strong> A swipe immediately reserves the money for the bill — debit-style feel, statement-cycle accounting under the hood.</li>
+        <li data-fade><strong>Local-first.</strong> Your data lives on your iPhone and your iCloud private database. Nowhere else.</li>
+        <li data-fade><strong>No accounts, no analytics, no ads.</strong> Sign in with Apple if you want sync; Face ID lock if you want privacy from someone holding your phone.</li>
+      </ul>
+
+      <h2 data-fade>What werkBudget isn't</h2>
+      <ul>
+        <li data-fade>It isn't a bank connection. v1 is hand-entry plus on-device AI to make entry feel quick. Bank-link APIs are noisy, expensive, and demand server infrastructure that breaks the local-first promise.</li>
+        <li data-fade>It isn't an investing tool. Different problem, different app.</li>
+        <li data-fade>It isn't a couples app — yet. Spouse sharing is on the v2 roadmap (selective CKShare, not iCloud Family).</li>
+      </ul>
+
+      <h2 data-fade>Who built it</h2>
+      <p data-fade>
+        werkBudget is built by Caleb Werkmeister — solo developer, opinionated about money, allergic to subscriptions that surveil you. It's part of the <strong>werkey.tech</strong> family of tools, each one designed to do one thing well, run on your own device, and respect your time.
+      </p>
+
+      <h2 data-fade>Get in</h2>
+      <p data-fade>
+        Want to try the beta? <a href="/#testflight">Join TestFlight</a> or email <a href="mailto:werkbudget@werkey.tech">werkbudget@werkey.tech</a>. Bug reports and unhinged feature requests both welcome.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div>© <span id="year">2026</span> werkBudget · made with care on a quiet street</div>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:werkbudget@werkey.tech">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="app.js" defer></script>
+</body>
+</html>
