@@ -51,12 +51,12 @@ In Squarespace Domains → `werkey.tech` → DNS Settings → **Custom Records**
 
 | Host         | Type   | Data                                |
 |--------------|--------|-------------------------------------|
-| `werkbudget` | CNAME  | `<your-github-username>.github.io.` |
+| `werkbudget` | CNAME  | `cwerkey.github.io.` |
 
 That's it — one record. The trailing dot is optional; Squarespace normalizes.
 
 **Notes:**
-- Replace `<your-github-username>` with your actual GitHub username (the CNAME points at the *account* `github.io` host, not the repo).
+- `cwerkey.github.io` is the *account* `github.io` host, not a specific repo — GitHub Pages routes the subdomain to the right repo via the CNAME file at the repo root.
 - Do **not** also add an A record for `werkbudget`. CNAME alone.
 - Propagation is usually a few minutes, occasionally up to an hour.
 
