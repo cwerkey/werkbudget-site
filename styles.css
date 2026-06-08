@@ -11,7 +11,9 @@
   --wash:      #DDEAE3;
   --income:    #4A7A5C;
   --warning:   #C68A3F;
+  --attention: #C68A3F;   /* AppColor.attention — heads-up amber, distinct from danger */
   --spend:     #6A8A7C;   /* AppColor.spendNeutral */
+  --danger:    #A33A2C;   /* AppColor.danger — reserved for truly-over states */
   --track:     rgba(0,0,0,0.06);
 
   --r-sm: 8px;
@@ -37,12 +39,14 @@
     --text:     #E6E2DC;
     --text-2:   #9A958E;
     --text-3:   #827B72;
-    --accent:   #4A8270;
-    --accent-2: #6A9986;
-    --wash:     #3D5F55;
+    --accent:   #5C9882;   /* dark accent lifted ~12% per R2 + R3 dark-mode tuning */
+    --accent-2: #7DAB97;
+    --wash:     #4F786A;
     --income:   #6FA084;
     --warning:  #D9A560;
+    --attention:#D9A560;   /* mirrors AppColor.attention dark variant */
     --spend:    #82AC9B;
+    --danger:   #C45040;
     --track:    rgba(255,255,255,0.08);
     --shadow-1: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.2);
     --shadow-2: 0 4px 12px rgba(0,0,0,.35), 0 20px 60px rgba(0,0,0,.35);
@@ -316,7 +320,7 @@ button { font: inherit; cursor: pointer; }
 }
 .app-hero .split {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  grid-template-columns: 1fr 1px 1fr;
   gap: 8px;
   margin-top: 10px;
   align-items: center;
@@ -810,6 +814,301 @@ footer {
 .long a { color: var(--accent); border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
 .long a:hover { border-bottom-color: var(--accent); }
 
+/* ---------- device mockup additions: inbox card, FAB, tab bar ---------- */
+
+/* "8 charges to sort" inbox card sandwiched between hero and envelopes */
+.app-inbox {
+  margin: 0 16px 12px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 28px 1fr 12px;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.app-inbox .inbox-glyph {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--wash);
+  color: var(--accent);
+  display: grid; place-items: center;
+}
+.app-inbox .inbox-glyph svg { width: 16px; height: 16px; }
+.app-inbox .inbox-h {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+.app-inbox .inbox-s {
+  font-size: 9px;
+  color: var(--text-2);
+  margin-top: 1px;
+}
+.app-inbox .inbox-chev { width: 9px; height: 9px; color: var(--text-3); }
+
+/* FAB inside the mockup screen */
+.app-fab {
+  position: absolute;
+  right: 18px;
+  bottom: 56px;
+  width: 38px; height: 38px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  display: grid; place-items: center;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 35%, transparent);
+  z-index: 2;
+}
+.app-fab svg { width: 18px; height: 18px; }
+
+/* Tab bar at the bottom of the mockup */
+.app-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  padding: 8px 8px 14px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border);
+}
+.app-tabs .tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-3);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.app-tabs .tab svg { width: 17px; height: 17px; }
+.app-tabs .tab.on { color: var(--accent); }
+
+/* the app-grid sits in tighter vertical space now that the inbox row + tab bar are present */
+.app-grid {
+  padding: 0 12px 56px;
+}
+
+/* ---------- Plan / Forecast — new flagship section ---------- */
+.forecast-scene { padding: 80px 0 96px; }
+
+.forecast-mock {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 24px 18px;
+  box-shadow: var(--shadow-1);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.forecast-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.forecast-stat { display: flex; flex-direction: column; gap: 2px; }
+.forecast-stat .cap {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-3);
+}
+.forecast-stat .val {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.forecast-stat .val.income { color: var(--income); }
+.forecast-stat .sub {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.forecast-month-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.forecast-month-row .chev { color: var(--accent); font-weight: 700; font-size: 16px; cursor: default; }
+
+.forecast-dow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  padding: 0 4px 6px;
+}
+
+.forecast-grid {
+  width: 100%;
+  height: 280px;
+  display: block;
+}
+.forecast-line {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 1.6s var(--ease);
+}
+.forecast-mock.in-view .forecast-line {
+  stroke-dashoffset: 0;
+}
+.forecast-dip {
+  opacity: 0;
+  transition: opacity .4s var(--ease) 1.2s;
+}
+.forecast-mock.in-view .forecast-dip { opacity: 1; }
+
+.forecast-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.forecast-legend .item { display: inline-flex; align-items: center; gap: 6px; }
+.forecast-legend .dot { width: 8px; height: 8px; border-radius: 999px; }
+
+@media (max-width: 720px) {
+  .forecast-header { grid-template-columns: 1fr; gap: 10px; }
+  .forecast-grid { height: 220px; }
+}
+
+/* ---------- distribute scrub labels — Must-pay / Goal / Just-track ---------- */
+.target .rule.must  { background: var(--wash); color: var(--accent); }
+.target .rule.goal  { background: color-mix(in srgb, var(--income) 18%, var(--surface)); color: var(--income); }
+.target .rule.track {
+  background: color-mix(in srgb, var(--text-3) 16%, var(--surface));
+  color: var(--text-2);
+}
+
+/* ---------- Mac companion ---------- */
+.mac-companion { padding: 80px 0 96px; }
+.mac-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 900px) { .mac-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+.mac-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 3.4vw, 40px);
+  letter-spacing: -0.025em;
+  margin: 0 0 16px;
+}
+.mac-copy p { color: var(--text-2); margin: 0 0 12px; font-size: 17px; }
+.mac-copy .mac-fine { color: var(--text-3); font-size: 14px; }
+
+.mac-mock {
+  perspective: 1200px;
+}
+.mac-frame {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+  transform: rotateY(calc(var(--mac-tilt, -3) * 1deg)) rotateX(2deg);
+  transition: transform .3s var(--ease);
+}
+.mac-mock:hover .mac-frame { --mac-tilt: 0; }
+
+.mac-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--bg) 80%, var(--surface));
+  border-bottom: 1px solid var(--border);
+}
+.mac-dot {
+  width: 11px; height: 11px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.mac-dot.r { background: #ff5f57; }
+.mac-dot.y { background: #febc2e; }
+.mac-dot.g { background: #28c840; }
+.mac-title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  padding-right: 51px; /* compensate for the 3 dots so title stays centered */
+}
+
+.mac-body {
+  font-family: var(--font-text);
+  font-variant-numeric: tabular-nums;
+}
+.mac-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 100px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 18px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.mac-row:last-child { border-bottom: none; }
+.mac-row-date { color: var(--text-3); font-size: 11px; }
+.mac-row-payee { font-weight: 600; }
+.mac-row-cat {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+}
+.mac-row-cat.hint {
+  color: var(--text-3);
+  font-style: italic;
+  font-weight: 400;
+}
+.mac-row-cat.income { color: var(--income); }
+.mac-row-amt {
+  text-align: right;
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+.mac-row-amt.income { color: var(--income); }
+.mac-row.pending {
+  background: color-mix(in srgb, var(--attention) 6%, transparent);
+}
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -817,4 +1116,6 @@ footer {
     transition-duration: 0.01ms !important;
   }
   [data-fade] { opacity: 1; transform: none; }
+  .forecast-line { stroke-dashoffset: 0; }
+  .forecast-dip { opacity: 1; }
 }

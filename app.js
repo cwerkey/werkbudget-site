@@ -67,6 +67,23 @@
     envFills.forEach(el => io.observe(el));
   }
 
+  // ---------- forecast mock: trigger sparkline draw on view ----------
+  // The CSS uses a `.in-view` class on `.forecast-mock` to animate the
+  // sparkline's `stroke-dashoffset` from 2000 → 0. Same pattern as
+  // [data-fade] but on a different element class so the rest of the
+  // observer logic doesn't need a separate hook.
+  const forecastMock = document.querySelector('.forecast-mock');
+  if (forecastMock) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.35 });
+    io.observe(forecastMock);
+  }
+
   // ---------- hero device parallax/tilt on scroll + mousemove ----------
   const device = document.querySelector('.device');
   if (device && !prefersReduced) {
