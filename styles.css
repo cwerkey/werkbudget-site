@@ -126,6 +126,10 @@ button { font: inherit; cursor: pointer; }
   transition: transform .2s var(--ease), filter .2s var(--ease);
 }
 .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
+/* Beat `.nav-links a` (specificity 0,1,1), which would otherwise paint the
+   CTA text in the muted link gray — illegible on the accent fill (~1.1:1).
+   This restores the on-accent text color in both themes. */
+.nav-links a.nav-cta { color: var(--bg); }
 @media (max-width: 640px) {
   .nav-links a:not(.nav-cta) { display: none; }
 }
@@ -158,6 +162,11 @@ button { font: inherit; cursor: pointer; }
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 24px;
+}
+/* Dark mode: the --wash fill sits too close to the accent text to read
+   (~1.4:1). Swap to a translucent accent pill so the green text pops. */
+@media (prefers-color-scheme: dark) {
+  .eyebrow { background: color-mix(in srgb, var(--accent) 16%, transparent); }
 }
 .hero h1 {
   font-family: var(--font-display);
@@ -795,6 +804,17 @@ footer {
   color: var(--text-3);
   font-size: 14px;
   margin-bottom: 36px;
+}
+/* Page subtitle ("dek") under the h1 — styled identically to the
+   section sub-headers (.long h2) so they read as one heading voice:
+   same display font, weight, size, tracking, and color. */
+.long .dek {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  margin: 0 0 40px;
 }
 .long h2 {
   font-family: var(--font-display);
